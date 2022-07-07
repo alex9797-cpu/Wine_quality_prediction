@@ -45,9 +45,20 @@ sns.heatmap(corr_mat_white, xticklabels=corr_mat_red.columns,yticklabels=corr_ma
 plt.show()
 
 # Descriptive Anaylsis for red wines:
-print(f' Wine Type')
+print(' Red wine')
 for i in range(1,12):
     print_summary_stats(wine_red,i)
+
+
+print('White wine')
+for i in range(1,12):
+    print_summary_stats(wine_white,i)
+
+
+
+
+
+
 
 
 
