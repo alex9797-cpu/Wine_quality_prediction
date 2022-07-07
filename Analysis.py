@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from utils import *
+
 
 wine_data=pd.read_csv(filepath_or_buffer="winequalityN.csv")
 
@@ -9,6 +11,7 @@ n_row=wine_data.shape[0]
 n_col=wine_data.shape[1]
 
 print(f"The Dataset contains {n_row} Observations and {n_col} Variables")
+print('\n')
 
 ' Split up into red and white wine'
 wine_red = wine_data[wine_data['type']=='red']
@@ -40,6 +43,19 @@ corr_mat_white=wine_white.iloc[:,1:11].corr()
 
 sns.heatmap(corr_mat_white, xticklabels=corr_mat_red.columns,yticklabels=corr_mat_red.columns)
 plt.show()
+
+# Descriptive Anaylsis for red wines:
+print(f' Wine Type')
+for i in range(1,12):
+    print_summary_stats(wine_red,i)
+
+
+
+
+
+
+
+
 
 
 
